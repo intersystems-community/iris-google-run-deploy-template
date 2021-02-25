@@ -12,6 +12,9 @@
         "service": "iris",
         "internalPort": 52773
       },
+      "links": {
+        "Frontend Page":"http://localhost:${port}/deploy/page17617906.html"
+      },
       "active": true
     },
     "sqltools.connections": [
@@ -21,7 +24,7 @@
         "showSystem": false,
         "previewLimit": 50,
         "server": "localhost",
-        "port": 32770,
+        "port": 55003,
         "askForPassword": false,
         "driver": "InterSystems IRIS",
         "name": "objectscript-docker",
