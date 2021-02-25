@@ -1,11 +1,31 @@
-## intersystems-objectscript-template
-This is a template for InterSystems ObjectScript Github repository.
-The template goes also with a few files which let you immedietly compile your ObjecScript files in InterSystems IRIS Community Edition in a docker container
+## iris-google-run-deploy-template
+This is a template to deploy InterSystems IRIS solution to Google Kubernetes Engine with every push in master branch.
+It uses Github Actions and Google Run
 
-## Prerequisites
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+## how it works
+It deployes the IRIS with sample cls and with a static frontend.
+The demo site is available here
 
-## Installation 
+## How to use it
+Take the workflow file to your repository
+Change these lines to your options:
+```
+IMAGE_NAME:   iris-google-run-demo
+SERVICE:      deploy-demo
+DOMAIN_NAME:  deploy.contest.community.intersystems.com
+```
+Note, that IMAGE_NAME could be any name for the docker image of your app
+SERVICE can be anything, but different from this file
+and DOMAIN_NAME could be any 5-level dns name before contest.community.intersystems.com
+
+Also, you need to request the service key to access the GCP cluster for deployemnt your app. Do it in the [discord](https://discord.gg/dzzPDvY) in the Open Exchange channel.
+Add the Secret to your Github Repository in [Settings](https://github.com/intersystems-community/iris-google-run-deploy-template/settings)/Secrets section with SERVICE_ACCOUNT_KEY name and put the JSON key there.
+
+After that your solution will be deployed into yourname.contest.community.intersystems.com with every push to master automatically.
+
+You can check the deployment status in the [Actions](https://github.com/intersystems-community/iris-google-run-deploy-template/actions) section of the repository.
+
+## Development 
 
 Clone/git pull the repo into any local directory
 
@@ -44,15 +64,6 @@ Feel free to delete PackageSample folder and place your ObjectScript classes in 
 [Read more about folder setup for InterSystems ObjectScript](https://community.intersystems.com/post/simplified-objectscript-source-folder-structure-package-manager)
 
 The script in Installer.cls will import everything you place under /src into IRIS.
-
-
-## What's inside the repository
-
-### Dockerfile
-
-The simplest dockerfile which starts IRIS and imports code from /src folder into it.
-Use the related docker-compose.yml to easily setup additional parametes like port number and where you map keys and host folders.
-
 
 ### .vscode/settings.json
 
