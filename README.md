@@ -1,13 +1,13 @@
 ## iris-google-run-deploy-template
-This is a template to deploy InterSystems IRIS solution to Google Kubernetes Engine with every push in master branch.
-It uses Github Actions and Google Run
+This is a template to deploy InterSystems IRIS solution to Google Kubernetes Engine.
+The template uses Github Actions and Google Cloud Run
 
 ## how it works
-It deployes the IRIS with sample cls and with a static frontend.
-The demo site is available here
+The worlfow deployes the IRIS with sample cls and with a static frontend with every push to the master branch.
+The demo site is [available here](https://deploy.contest.community.intersystems.com/deploy/page17617906.html).
 
 ## How to use it
-Take the workflow file to your repository
+Take the [workflow file](https://github.com/intersystems-community/iris-google-run-deploy-template/blob/master/.github/workflows/build-push-gcr.yaml) to your repository
 Change these lines to your options:
 ```
 IMAGE_NAME:   iris-google-run-demo
@@ -23,7 +23,7 @@ Add the Secret to your Github Repository in [Settings](https://github.com/inters
 
 After that your solution will be deployed into yourname.contest.community.intersystems.com with every push to master automatically.
 
-You can check the deployment status in the [Actions](https://github.com/intersystems-community/iris-google-run-deploy-template/actions) section of the repository.
+You can check the deployment status in the [Actions](https://github.com/intersystems-community/iris-google-run-deploy-template/actions) section of your repository.
 
 ## Development 
 
@@ -45,14 +45,6 @@ $ docker-compose build
 $ docker-compose up -d
 ```
 
-## How to Test it
-
-Open IRIS terminal:
-
-```
-$ docker-compose exec iris iris session iris
-USER>write ##class(dc.PackageSample.ObjectScript).Test()
-```
 ## How to start coding
 This repository is ready to code in VSCode with ObjectScript plugin.
 Install [VSCode](https://code.visualstudio.com/), [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
