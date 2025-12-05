@@ -4,7 +4,7 @@ The template uses Github Actions and Google Cloud Run
 
 ## how it works
 The worlfow deployes the IRIS with sample cls and with a static frontend with every push to the master branch.
-The demo site is [available here](https://deploy.contest.community.intersystems.com/deploy/page17617906.html).
+The demo site is [available here](https://deploy.demo.community.intersystems.com/deploy/page17617906.html).
 
 ## How to use it
 Take the [workflow file](https://github.com/intersystems-community/iris-google-run-deploy-template/blob/master/.github/workflows/build-push-gcr.yaml) to your repository
@@ -12,16 +12,16 @@ Change these lines to your options:
 ```
 IMAGE_NAME:   iris-google-run-demo
 SERVICE:      deploy-demo
-DOMAIN_NAME:  deploy.contest.community.intersystems.com
+DOMAIN_NAME:  deploy.demo.community.intersystems.com
 ```
 Note, that IMAGE_NAME could be any name for the docker image of your app
 SERVICE can be anything, but different from this file
-and DOMAIN_NAME could be any 5-level dns name before contest.community.intersystems.com
+and DOMAIN_NAME could be any 5-level dns name before demo.community.intersystems.com
 
 Also, you need to request the service key to access the GCP cluster for deployemnt your app. Do it in the [discord](https://discord.gg/dzzPDvY) in the Open Exchange channel.
 Add the Secret to your Github Repository in [Settings](https://github.com/intersystems-community/iris-google-run-deploy-template/settings)/Secrets section with SERVICE_ACCOUNT_KEY name and put the JSON key there.
 
-After that your solution will be deployed into yourname.contest.community.intersystems.com with every push to master automatically.
+After that your solution will be deployed into yourname.demo.community.intersystems.com with every push to master automatically.
 
 You can check the deployment status in the [Actions](https://github.com/intersystems-community/iris-google-run-deploy-template/actions) section of your repository.
 
